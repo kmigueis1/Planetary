@@ -11,7 +11,7 @@ The main view renders the currently created planets. By default, Earth's solar s
 
 The user can choose to use the default solar system. The user can also choose to edit this solar system or create a custom one. Editable properties will include an explandable list of planets, their unique names, masses, densities, trajectories, speeds, and starting positions. The sidebar will include a play button to start the animation. This should be a clean and engaging interface with sliders. 
 
-### Convincing Physics & Aditional Features
+### Convincing Physics
 
 The planets will interact using real gravitational laws and approximations. To limit the scope of this project, orbits will be 2 dimensional. 
 

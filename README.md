@@ -18,5 +18,17 @@ The planets will interact using real gravitational laws and approximations. To l
 ## Technologies 
 This project will use the React library. Planets will be rendered to the DOM using React. Planetary movement logic will be handled by JavaScript. Positions will be kept track of using a grid with coordinate positions
 
+## Implementation Timeline
+
+### Day1
+Get some basic rendering of planet objects on the DOM according to position with React. Research the necessary physics to govern the dom element movements and implement this logic in JavaScript.
+
+### Day2
+Have the DOM elements properly animate movement. Implement the sidebar with sliders to change the properties of the planets which will then influence their movement and physics. 
+
+### Day3
+Add styling and a background to make the user interface clean and enjoyable to use. 
+
+
 ## Bonus Features 
 Users should be able to click on a planet and see detailed information about it, as well as measure the approximate distance to another celestial body by clicking on a second planet/star. Add background music that can be muted.

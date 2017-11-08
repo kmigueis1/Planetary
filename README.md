@@ -29,6 +29,10 @@ Have the DOM elements properly animate movement. Implement the sidebar with slid
 ### Day3
 Add styling and a background to make the user interface clean and enjoyable to use. 
 
+## WireFrame
+
+![](images/SolarSystemUI.png)
+
 
 ## Bonus Features 
 Users should be able to click on a planet and see detailed information about it, as well as measure the approximate distance to another celestial body by clicking on a second planet/star. Add background music that can be muted.

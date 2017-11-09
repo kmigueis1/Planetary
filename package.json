@@ -2,6 +2,8 @@
   "name": "Planetary",
   "private": true,
   "dependencies": {
+    "three": "^0.88.0",
+    "three-orbitcontrols": "^1.2.1",
     "webpack": "^3.8.1"
   },
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",

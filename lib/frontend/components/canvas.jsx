@@ -20,8 +20,8 @@ class Canvas extends React.Component {
     this.mercuryMove();
     this.venusMove();
 
-    this.state.movements.forEach((movePlanet) => {
-      movePlanet();
+    this.state.movements.forEach((func) => {
+      func();
     });
     this.renderer.render(this.scene, this.camera );
     this.controls.update();
@@ -73,7 +73,7 @@ class Canvas extends React.Component {
       let planet = this.props.planets[planetName];
       let planetBody = System.createPlanet(planet.radius, planet.color);
       let planetMove = System.enablePlanet(planetBody, planet.speed, planet.orbitalRadius, planet.orbitalCenter, this.scene );
-      // this.movements.push(planetMove);
+      this.state.movements.push(planetMove);
     })
   }
 

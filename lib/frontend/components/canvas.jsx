@@ -39,14 +39,6 @@ class Canvas extends React.Component {
     camera.lookAt(new THREE.Vector3(0, 0, 0));
     this.camera = camera;
 
-    let controls = new TrackballControls(camera);
-    controls.rotateSpeed = 2.0;
-    controls.zoomSpeed = 1.2;
-    controls.panSpeed = 0.8;
-    controls.noZoom = false;
-    controls.noPan = false;
-    controls.dynamicDampingFactor = 0.3;
-    this.controls = controls;
 
     let scene = new THREE.Scene();
     this.scene = scene;
@@ -54,8 +46,16 @@ class Canvas extends React.Component {
     let renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
     this.renderer = renderer;
-    document.body.appendChild(this.renderer.domElement);
+    document.getElementById("canvas-wrapper").appendChild(this.renderer.domElement);
     //should I have this on the window or on the canvas-wrapper?
+    let controls = new TrackballControls(camera, this.renderer.domElement);
+    controls.rotateSpeed = 2.0;
+    controls.zoomSpeed = 1.2;
+    controls.panSpeed = 0.8;
+    controls.noZoom = false;
+    controls.noPan = false;
+    controls.dynamicDampingFactor = 0.3;
+    this.controls = controls;
 
     let mercury = System.createPlanet(5);
     const mercuryMove = System.enablePlanet(mercury, 15, 15, [0,0,0], this.scene);
@@ -79,7 +79,7 @@ class Canvas extends React.Component {
 
   render(){
     return (
-      <div className="canvas-wrapper">
+      <div className="canvas-wrapper" id="canvas-wrapper">
 
       </div>
     );

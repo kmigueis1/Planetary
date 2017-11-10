@@ -73,7 +73,7 @@ class Canvas extends React.Component {
       let planet = this.props.planets[planetName];
       let planetBody = System.createPlanet(planet.radius, planet.color);
       let planetMove = System.enablePlanet(planetBody, planet.speed, planet.orbitalRadius, planet.orbitalCenter, this.scene );
-      this.movements.push(planetMove);
+      // this.movements.push(planetMove);
     })
   }
 

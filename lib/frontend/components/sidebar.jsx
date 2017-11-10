@@ -1,5 +1,7 @@
 import React from 'react';
 import Planet from '../../planet';
+import * as Util from '../../util';
+
 
 class SideBar extends React.Component {
 
@@ -19,9 +21,8 @@ class SideBar extends React.Component {
 
 
   handleSubmit(e){
-    console.log(this.props);
-    this.props.addPlanet(new Planet(10, 30, 200, [0,0,0]))
-
+    console.log("im in handle submit",this.props);
+    this.props.addPlanet(new Planet(10, 30, 200, [0,0,0], Util.planetColors("red"), "superearth"))
   }
 
   render(){

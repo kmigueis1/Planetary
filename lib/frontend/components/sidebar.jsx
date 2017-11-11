@@ -101,7 +101,7 @@ class SideBar extends React.Component {
               <span>{this.state.radius}</span>
             </div>
 
-          <span>Speed</span>
+          <span>Velocity</span>
             <div>
               <input type="range" min="0" max="100" value={this.state.speed} onChange={this.setSpeed} />
               <span>{this.state.speed}</span>
@@ -125,8 +125,7 @@ class SideBar extends React.Component {
                 <span>{this.state.color}</span>
                 <input type="color" value={this.state.color} onChange={this.setColor}/>
               </div>
-
-          <button onClick={this.handleSubmit}>Create</button>
+            <div className="button" onClick={this.handleSubmit}><div>+</div></div>
         </div>
         {planets}
       </div>

@@ -27,9 +27,19 @@
   margin: 15px;
 }
 
-button {
-  width: 70px;
+.button {
+  color: white;
+  font-size: 25px;
+  background: black;
+  width: 30px;
   height: 30px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button:hover{
+  cursor: pointer;
 }
 
 .canvas-wrapper {

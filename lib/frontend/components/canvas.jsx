@@ -17,8 +17,6 @@ class Canvas extends React.Component {
   }
 
   play () {
-    this.mercuryMove();
-    this.venusMove();
 
     this.state.movements.forEach((func) => {
       func();
@@ -56,14 +54,14 @@ class Canvas extends React.Component {
     controls.noPan = false;
     controls.dynamicDampingFactor = 0.3;
     this.controls = controls;
-
-    let mercury = System.createPlanet(5);
-    const mercuryMove = System.enablePlanet(mercury, 15, 15, [0,0,0], this.scene);
-    this.mercuryMove = mercuryMove;
-
-    let venus = System.createPlanet(10, Util.planetColors("red"));
-    const venusMove = System.enablePlanet(venus, 5, 30, [0,0,0], this.scene);
-    this.venusMove = venusMove;
+    //
+    // let mercury = System.createPlanet(5);
+    // const mercuryMove = System.enablePlanet(mercury, 15, 15, [0,0,0], this.scene);
+    // this.mercuryMove = mercuryMove;
+    //
+    // let venus = System.createPlanet(10, Util.planetColors("red"));
+    // const venusMove = System.enablePlanet(venus, 5, 30, [0,0,0], this.scene);
+    // this.venusMove = venusMove;
 
     this.play()
   }

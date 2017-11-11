@@ -1,16 +1,35 @@
 .side-bar-container {
-  height: 500px;
+  font-family: courier;
+  color: white;
   width: 200px;
-  background: blue;
+  background: rgba(220,226,237,0.3);
   position: absolute;
   top: 50px;
   left: 50px;
   z-index: 1000px;
+  border: 1px solid gray;
+}
+
+.side-bar-item {
+  margin: 2px;
+  border: 1px solid gray;
+  background: rgba(0,0,0,0.5);
+}
+.planet-info {
+
+}
+
+.orb-center-input {
+  width: 40px;
+}
+
+.add-planet-form {
+  margin: 15px;
 }
 
 button {
   width: 70px;
-  height: 50px;
+  height: 30px;
 }
 
 .canvas-wrapper {

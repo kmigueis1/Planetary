@@ -1,7 +1,6 @@
 .side-bar-container {
   font-family: courier;
   color: white;
-  height: 500px;
   width: 200px;
   background: rgba(220,226,237,0.3);
   position: absolute;
@@ -10,6 +9,16 @@
   z-index: 1000px;
   border: 1px solid gray;
 }
+
+.side-bar-item {
+  margin: 2px;
+  border: 1px solid gray;
+  background: rgba(0,0,0,0.5);
+}
+.planet-info {
+
+}
+
 .orb-center-input {
   width: 40px;
 }

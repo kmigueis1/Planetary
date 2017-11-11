@@ -1,6 +1,7 @@
 import React from 'react';
 import Planet from '../../planet';
 import * as Util from '../../util';
+import SideBarItem from './sidebar_item';
 
 
 
@@ -11,7 +12,7 @@ class SideBar extends React.Component {
     super(props);
 
     this.state = {
-      name: "earth",
+      name: "Earth",
       radius: "5",
       speed: "0",
       orbitalRadius: "50",
@@ -41,7 +42,6 @@ class SideBar extends React.Component {
     let orbitalRadius = parseInt(this.state.orbitalRadius);
     let orbitalCenter = this.state.orbitalCenter;
     let color = this.state.color;
-
     this.props.addPlanet(new Planet(radius, speed, orbitalRadius, orbitalCenter,  color, name))
   }
 
@@ -79,6 +79,13 @@ class SideBar extends React.Component {
   }
 
   render(){
+    let planets = Object.values(this.props.planets).map((planet) => {
+      return (
+        <SideBarItem key={planet.id} planet={planet}/>
+      );
+    });
+
+
     return (
       <div className="side-bar-container">
 
@@ -119,8 +126,9 @@ class SideBar extends React.Component {
                 <input type="color" value={this.state.color} onChange={this.setColor}/>
               </div>
 
-          <button onClick={this.handleSubmit}>AddPlanet</button>
+          <button onClick={this.handleSubmit}>Create</button>
         </div>
+        {planets}
       </div>
     );
   }

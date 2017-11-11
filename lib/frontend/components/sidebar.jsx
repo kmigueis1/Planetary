@@ -81,7 +81,7 @@ class SideBar extends React.Component {
   render(){
     let planets = Object.values(this.props.planets).map((planet) => {
       return (
-        <SideBarItem key={planet.id} planet={planet}/>
+        <SideBarItem key={planet.name} planet={planet} deletePlanet={this.props.deletePlanet}/>
       );
     });
 

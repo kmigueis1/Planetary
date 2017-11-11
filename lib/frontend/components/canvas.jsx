@@ -28,10 +28,6 @@ class Canvas extends React.Component {
 
   componentDidMount(){
 
-    console.log(this.props);
-
-
-
     let camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 2000);
     camera.position.set(0, 0 , 200);
     camera.lookAt(new THREE.Vector3(0, 0, 0));
@@ -67,12 +63,35 @@ class Canvas extends React.Component {
   }
 
   componentDidUpdate () {
+    let scene = this.scene;
+
     Object.keys(this.props.planets).forEach((planetName) => {
-      let planet = this.props.planets[planetName];
-      let planetBody = System.createPlanet(planet.radius, planet.color);
-      let planetMove = System.enablePlanet(planetBody, planet.speed, planet.orbitalRadius, planet.orbitalCenter, this.scene );
-      this.state.movements.push(planetMove);
+      let existingPlanet = scene.getObjectByName(planetName);
+
+      if (!existingPlanet){
+        //creating new planet
+        let planet = this.props.planets[planetName];
+        let planetBody = System.createPlanet(planet.radius, planet.color);
+        planetBody.name = planetName;
+        console.log("planet does not exist yet");
+        let planetMove = System.enablePlanet(planetBody, planet.speed, planet.orbitalRadius, planet.orbitalCenter, scene );
+        this.state.movements.push(planetMove);
+      }
     })
+  }
+
+  componentWillReceiveProps(nextProps) {
+    //deleting planet in canvas that no longer exists in nextProps
+    let newPropsArray = Object.keys(nextProps.planets);
+    let oldPropsArray = Object.keys(this.props.planets);
+    let scene = this.scene;
+
+    oldPropsArray.forEach((planetName) => {
+      if (!newPropsArray.includes(planetName)){
+        let existingPlanet = scene.getObjectByName(planetName);
+        System.deletePlanet(existingPlanet, scene);
+      }
+    });
   }
 
   render(){

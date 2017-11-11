@@ -1,6 +1,8 @@
 import React from 'react';
 
 const SideBarItem = (props) => {
+
+
   return (
     <div className="side-bar-item">
       <div className="planet-info">
@@ -10,7 +12,10 @@ const SideBarItem = (props) => {
         <div className="velocity">
           <span >Velocity: {props.planet.speed}px/sec</span>
         </div>
+
       </div>
+      <div className="button minus" onClick={(e) => (props.deletePlanet(props.planet.name))}><div>-</div></div>
+
     </div>
   );
 }

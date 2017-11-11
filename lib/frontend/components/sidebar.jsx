@@ -16,7 +16,7 @@ class SideBar extends React.Component {
       speed: "0",
       orbitalRadius: "50",
       orbitalCenter: [0,0,0],
-      color: 0xffff00
+      color: "#00ffff"
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.setRadius = this.setRadius.bind(this);
@@ -26,7 +26,7 @@ class SideBar extends React.Component {
     this.setOrbitalCenterX = this.setOrbitalCenterX.bind(this);
     this.setOrbitalCenterY = this.setOrbitalCenterY.bind(this);
     this.setOrbitalCenterZ = this.setOrbitalCenterZ.bind(this);
-
+    this.setColor = this.setColor.bind(this);
   }
 
   componentDidMount(){
@@ -73,6 +73,11 @@ class SideBar extends React.Component {
     this.setState({orbitalCenter: [this.state.orbitalCenter[0], this.state.orbitalCenter[1], e.target.value]})
   }
 
+  setColor(e) {
+    console.log(e.target.value);
+    this.setState({color: e.target.value})
+  }
+
   render(){
     return (
       <div className="side-bar-container">
@@ -107,6 +112,12 @@ class SideBar extends React.Component {
               <input className="orb-center-input" type="number" value={this.state.orbitalCenter[1]} onChange={this.setOrbitalCenterY} />
               <input className="orb-center-input" type="number" value={this.state.orbitalCenter[2]} onChange={this.setOrbitalCenterZ} />
             </div>
+
+            <span>Color</span>
+              <div>
+                <span>{this.state.color}</span>
+                <input type="color" value={this.state.color} onChange={this.setColor}/>
+              </div>
 
           <button onClick={this.handleSubmit}>AddPlanet</button>
         </div>

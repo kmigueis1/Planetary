@@ -66,16 +66,19 @@ class Canvas extends React.Component {
     let scene = this.scene;
 
     Object.keys(this.props.planets).forEach((planetName) => {
+      let planet = this.props.planets[planetName];
       let existingPlanet = scene.getObjectByName(planetName);
-
+      console.log("existing planet is ", existingPlanet);
       if (!existingPlanet){
         //creating new planet
-        let planet = this.props.planets[planetName];
         let planetBody = System.createPlanet(planet.radius, planet.color);
         planetBody.name = planetName;
         console.log("planet does not exist yet");
         let planetMove = System.enablePlanet(planetBody, planet.speed, planet.orbitalRadius, planet.orbitalCenter, scene );
         this.state.movements.push(planetMove);
+      } else {
+        //update planet with new props
+        // Object.keys(planet).forEach()
       }
     })
   }

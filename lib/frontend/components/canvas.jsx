@@ -77,8 +77,10 @@ class Canvas extends React.Component {
         let planetMove = System.enablePlanet(planetBody, planet.speed, planet.orbitalRadius, planet.orbitalCenter, scene );
         this.state.movements.push(planetMove);
       } else {
+        //implement planet editing?
         //update planet with new props
         // Object.keys(planet).forEach()
+        // System.updatePlanet(planetBody, )
       }
     })
   }
@@ -92,7 +94,9 @@ class Canvas extends React.Component {
     oldPropsArray.forEach((planetName) => {
       if (!newPropsArray.includes(planetName)){
         let existingPlanet = scene.getObjectByName(planetName);
-        System.deletePlanet(existingPlanet, scene);
+        let existingOrbit = scene.getObjectByName(`${planetName}Orbit`);
+        System.deleteObject(existingPlanet, scene);
+        System.deleteObject(existingOrbit, scene);
       }
     });
   }

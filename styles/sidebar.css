@@ -19,6 +19,12 @@
 
 }
 
+.error-message{
+  color: red;
+  font-family: sans-serif;
+  font-size: 10px;
+}
+
 .orb-center-input {
   width: 40px;
 }
@@ -40,6 +46,8 @@
 }
 .button:hover{
   cursor: pointer;
+  color: #00ffff;
+  background: rgb(40,40,40);
 }
 
 .minus {

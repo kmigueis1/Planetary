@@ -17,7 +17,8 @@ class SideBar extends React.Component {
       speed: "0",
       orbitalRadius: "50",
       orbitalCenter: [0,0,0],
-      color: "#00ffff"
+      color: "#00ffff",
+      error: false
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.setRadius = this.setRadius.bind(this);
@@ -37,12 +38,17 @@ class SideBar extends React.Component {
 
   handleSubmit(e){
     let name = this.state.name;
-    let radius = parseInt(this.state.radius);
-    let speed = parseInt(this.state.speed);
-    let orbitalRadius = parseInt(this.state.orbitalRadius);
-    let orbitalCenter = this.state.orbitalCenter;
-    let color = this.state.color;
-    this.props.addPlanet(new Planet(radius, speed, orbitalRadius, orbitalCenter,  color, name))
+    if(!this.props.planets[name]){
+      this.setState({error: false});
+      let radius = parseInt(this.state.radius);
+      let speed = parseInt(this.state.speed);
+      let orbitalRadius = parseInt(this.state.orbitalRadius);
+      let orbitalCenter = this.state.orbitalCenter;
+      let color = this.state.color;
+      this.props.addPlanet(new Planet(radius, speed, orbitalRadius, orbitalCenter,  color, name))
+    } else {
+      this.setState({error: true});
+    }
   }
 
   setName(e){
@@ -84,7 +90,11 @@ class SideBar extends React.Component {
         <SideBarItem key={planet.name} planet={planet} deletePlanet={this.props.deletePlanet}/>
       );
     });
-
+    let errorMessage = this.state.error ? (
+      <div className="error-message">
+        <p>Please choose a unique name</p>
+      </div>
+    ) : (<div></div>)
 
     return (
       <div className="side-bar-container">
@@ -94,7 +104,7 @@ class SideBar extends React.Component {
             <div>
               <input type="text" value={this.state.name} onChange={this.setName} />
             </div>
-
+            {errorMessage}
           <span>Planet Radius</span>
             <div>
               <input type="range" min="1" max="100" value={this.state.radius} onChange={this.setRadius} />

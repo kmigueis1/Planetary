@@ -28,7 +28,7 @@ class Canvas extends React.Component {
 
   componentDidMount(){
 
-    let camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 2000);
+    let camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 15000);
     camera.position.set(0, 0 , 200);
     camera.lookAt(new THREE.Vector3(0, 0, 0));
     this.camera = camera;
@@ -59,6 +59,23 @@ class Canvas extends React.Component {
     // const venusMove = System.enablePlanet(venus, 5, 30, [0,0,0], this.scene);
     // this.venusMove = venusMove;
 
+    // imageObjFt = new Image();
+    // imageObjFt.crossOrigin = "anonymous"
+    // imageObjFt.src = "images/space/cwd_ft.JPG"
+
+    let skyboxGeometry = new THREE.CubeGeometry(5000,5000,5000);
+    let skyboxMaterial = [
+      new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load("../../../images/space2/img1_up.jpg"), side: THREE.DoubleSide}),
+      new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load("../../../images/space2/img2_front.jpg"), side: THREE.DoubleSide}),
+      new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load("../../../images/space2/img1_up.jpg"), side: THREE.DoubleSide}),
+      new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load("../../../images/space2/img6_down.jpg"), side: THREE.DoubleSide}),
+      new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load("../../../images/space2/img3_right.jpg"), side: THREE.DoubleSide}),
+      new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load("../../../images/space2/img6_down.jpg"), side: THREE.DoubleSide})
+
+    ];
+    // let skyboxMaterial1 = new THREE.MeshFaceMaterial(skyboxMaterial);
+    let skybox = new THREE.Mesh(skyboxGeometry, skyboxMaterial);
+    this.scene.add(skybox);
     this.play()
   }
 

@@ -14,8 +14,9 @@ class SideBar extends React.Component {
     this.state = {
       name: "Earth",
       radius: "5",
-      speed: "0",
+      speed: "1",
       orbitalRadius: "50",
+      eccentricity: "0",
       orbitalCenter: [0,0,0],
       color: "#00ffff",
       error: false
@@ -24,6 +25,7 @@ class SideBar extends React.Component {
     this.setRadius = this.setRadius.bind(this);
     this.setName = this.setName.bind(this);
     this.setSpeed = this.setSpeed.bind(this);
+    this.setEccentricity = this.setEccentricity.bind(this);
     this.setOrbitalRadius = this.setOrbitalRadius.bind(this);
     this.setOrbitalCenterX = this.setOrbitalCenterX.bind(this);
     this.setOrbitalCenterY = this.setOrbitalCenterY.bind(this);
@@ -32,6 +34,15 @@ class SideBar extends React.Component {
   }
 
   componentDidMount(){
+    this.props.addPlanet( new Planet(5, 23, 56, [0,0,0], "#8C8C94", 0.205, "Mercury"));
+    this.props.addPlanet( new Planet(12, 17, 108, [0,0,0], "#DE5F25", 0.0007, "Venus"));
+    this.props.addPlanet( new Planet(13, 15, 150, [0,0,0], "#00a3ff", 0.017, "Earth"));
+    this.props.addPlanet( new Planet(3, 12, 226, [0,0,0], "#F97A05", 0.094, "Mars"));
+    this.props.addPlanet( new Planet(142, 7, 777, [0,0,0], "#C1844D", 0.049, "Jupiter"));
+    this.props.addPlanet( new Planet(121, 5, 1431, [0,0,0], "#E0CDAD" , 0.057, "Saturn"));
+    this.props.addPlanet( new Planet(51, 4, 2869, [0,0,0], "#C7EDF0", 0.046, "Uranus"));
+    this.props.addPlanet( new Planet(49, 3, 4495, [0,0,0], "#3454DF", 0.011, "Neptune"));
+    this.props.addPlanet( new Planet(10, 2, 5727, [0,0,0], "#7C6241", 0.244, "Pluto"));
 
   }
 
@@ -45,7 +56,8 @@ class SideBar extends React.Component {
       let orbitalRadius = parseInt(this.state.orbitalRadius);
       let orbitalCenter = this.state.orbitalCenter;
       let color = this.state.color;
-      this.props.addPlanet(new Planet(radius, speed, orbitalRadius, orbitalCenter,  color, name))
+      let eccentricity = parseFloat(this.state.eccentricity)/100;
+      this.props.addPlanet(new Planet(radius, speed, orbitalRadius, orbitalCenter,  color, eccentricity, name))
     } else {
       this.setState({error: true});
     }
@@ -65,6 +77,10 @@ class SideBar extends React.Component {
 
   setOrbitalRadius(e){
     this.setState({orbitalRadius: e.target.value})
+  }
+
+  setEccentricity(e){
+    this.setState({eccentricity: e.target.value})
   }
 
   setOrbitalCenterX(e){
@@ -123,13 +139,17 @@ class SideBar extends React.Component {
               <span>{this.state.orbitalRadius}</span>
             </div>
 
-          <span>Orbital Center</span>
+            <span>Eccentricity %</span>
+              <div>
+                <input type="range" min="0" max="100" value={this.state.eccentricity} onChange={this.setEccentricity} />
+                <span>{this.state.eccentricity}</span>
+              </div>
+          <span className="orb-center-span">Orbital Center</span>
             <div>
               <input className="orb-center-input" type="number" value={this.state.orbitalCenter[0]} onChange={this.setOrbitalCenterX} />
               <input className="orb-center-input" type="number" value={this.state.orbitalCenter[1]} onChange={this.setOrbitalCenterY} />
               <input className="orb-center-input" type="number" value={this.state.orbitalCenter[2]} onChange={this.setOrbitalCenterZ} />
             </div>
-
             <span>Color</span>
               <div>
                 <span>{this.state.color}</span>

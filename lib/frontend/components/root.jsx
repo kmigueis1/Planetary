@@ -7,8 +7,8 @@ import CanvasContainer from './canvas_container';
 const Root = ({store}) => (
   <Provider store={store}>
     <div className="app-container">
-      <SideBarContainer />
       <CanvasContainer />
+        <SideBarContainer />
     </div>
   </Provider>
 

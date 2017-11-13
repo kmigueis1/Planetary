@@ -28,7 +28,7 @@ class Canvas extends React.Component {
 
   componentDidMount(){
 
-    let camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 15000);
+    let camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 50000);
     camera.position.set(0, 0 , 200);
     camera.lookAt(new THREE.Vector3(0, 0, 0));
     this.camera = camera;
@@ -51,19 +51,11 @@ class Canvas extends React.Component {
     controls.dynamicDampingFactor = 0.3;
     this.controls = controls;
     //
-    // let mercury = System.createPlanet(5);
-    // const mercuryMove = System.enablePlanet(mercury, 15, 15, [0,0,0], this.scene);
-    // this.mercuryMove = mercuryMove;
+    let sun = System.createPlanet(30);
+    scene.add(sun);
     //
-    // let venus = System.createPlanet(10, Util.planetColors("red"));
-    // const venusMove = System.enablePlanet(venus, 5, 30, [0,0,0], this.scene);
-    // this.venusMove = venusMove;
 
-    // imageObjFt = new Image();
-    // imageObjFt.crossOrigin = "anonymous"
-    // imageObjFt.src = "images/space/cwd_ft.JPG"
-
-    let skyboxGeometry = new THREE.CubeGeometry(5000,5000,5000);
+    let skyboxGeometry = new THREE.CubeGeometry(40000,40000,40000);
     let skyboxMaterial = [
       new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load("../../../images/space2/img1_up.jpg"), side: THREE.DoubleSide}),
       new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load("../../../images/space2/img2_front.jpg"), side: THREE.DoubleSide}),
@@ -91,7 +83,7 @@ class Canvas extends React.Component {
         let planetBody = System.createPlanet(planet.radius, planet.color);
         planetBody.name = planetName;
         console.log("planet does not exist yet");
-        let planetMove = System.enablePlanet(planetBody, planet.speed, planet.orbitalRadius, planet.orbitalCenter, scene );
+        let planetMove = System.enablePlanet(planetBody, planet.speed, planet.orbitalRadius, planet.orbitalCenter, planet.eccentricity, scene );
         this.state.movements.push(planetMove);
       } else {
         //implement planet editing?

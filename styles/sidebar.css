@@ -10,6 +10,14 @@
   border: 1px solid gray;
 }
 
+.orb-center-input {
+  display: none;
+}
+
+.orb-center-span {
+  display: none;
+}
+
 .side-bar-item {
   margin: 2px;
   border: 1px solid gray;

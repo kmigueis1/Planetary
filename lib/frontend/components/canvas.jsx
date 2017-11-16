@@ -49,6 +49,8 @@ class Canvas extends React.Component {
     controls.noZoom = false;
     controls.noPan = false;
     controls.dynamicDampingFactor = 0.3;
+    controls.minDistance = 100;
+    controls.maxDistance = 20000;
     this.controls = controls;
     //
     let sun = System.createPlanet(30);

@@ -54,15 +54,15 @@ class Canvas extends React.Component {
     let sun = System.createPlanet(30);
     scene.add(sun);
     //
-
+    //if hosting on github, these hosted image paths will work. If hosting somewhere else, these image paths will have to be changed.
     let skyboxGeometry = new THREE.CubeGeometry(40000,40000,40000);
     let skyboxMaterial = [
-      new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load("../../../images/space2/img1_up.jpg"), side: THREE.DoubleSide}),
-      new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load("../../../images/space2/img2_front.jpg"), side: THREE.DoubleSide}),
-      new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load("../../../images/space2/img1_up.jpg"), side: THREE.DoubleSide}),
-      new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load("../../../images/space2/img6_down.jpg"), side: THREE.DoubleSide}),
-      new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load("../../../images/space2/img3_right.jpg"), side: THREE.DoubleSide}),
-      new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load("../../../images/space2/img6_down.jpg"), side: THREE.DoubleSide})
+      new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load("https://raw.githubusercontent.com/kmigueis1/Planetary/master/images/space2/img1_up.jpg"), side: THREE.DoubleSide}),
+      new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load("https://raw.githubusercontent.com/kmigueis1/Planetary/master/images/space2/img2_front.jpg"), side: THREE.DoubleSide}),
+      new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load("https://raw.githubusercontent.com/kmigueis1/Planetary/master/images/space2/img1_up.jpg"), side: THREE.DoubleSide}),
+      new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load("https://raw.githubusercontent.com/kmigueis1/Planetary/master/images/space2/img6_down.jpg"), side: THREE.DoubleSide}),
+      new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load("https://raw.githubusercontent.com/kmigueis1/Planetary/master/images/space2/img3_right.jpg"), side: THREE.DoubleSide}),
+      new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load("https://raw.githubusercontent.com/kmigueis1/Planetary/master/images/space2/img6_down.jpg"), side: THREE.DoubleSide})
 
     ];
     // let skyboxMaterial1 = new THREE.MeshFaceMaterial(skyboxMaterial);

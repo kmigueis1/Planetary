@@ -40,6 +40,8 @@ class Canvas extends React.Component {
     let renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
     this.renderer = renderer;
+    let resizer = new THREEx.WindowResize(renderer, camera);
+    this.resizer = resizer;
     document.getElementById("canvas-wrapper").appendChild(this.renderer.domElement);
     //should I have this on the window or on the canvas-wrapper?
     let controls = new TrackballControls(camera, this.renderer.domElement);

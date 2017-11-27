@@ -34,10 +34,10 @@ class SideBar extends React.Component {
   }
 
   componentDidMount(){
-    this.props.addPlanet( new Planet(5, 23, 56, [0,0,0], "#8C8C94", 0.205, "Mercury"));
+    this.props.addPlanet( new Planet(3, 23, 56, [0,0,0], "#8C8C94", 0.205, "Mercury"));
     this.props.addPlanet( new Planet(12, 17, 108, [0,0,0], "#DE5F25", 0.0007, "Venus"));
     this.props.addPlanet( new Planet(13, 15, 150, [0,0,0], "#00a3ff", 0.017, "Earth"));
-    this.props.addPlanet( new Planet(3, 12, 226, [0,0,0], "#F97A05", 0.094, "Mars"));
+    this.props.addPlanet( new Planet(5, 12, 226, [0,0,0], "#F97A05", 0.094, "Mars"));
     this.props.addPlanet( new Planet(142, 7, 777, [0,0,0], "#C1844D", 0.049, "Jupiter"));
     this.props.addPlanet( new Planet(121, 5, 1431, [0,0,0], "#E0CDAD" , 0.057, "Saturn"));
     this.props.addPlanet( new Planet(51, 4, 2869, [0,0,0], "#C7EDF0", 0.046, "Uranus"));

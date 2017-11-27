@@ -17,7 +17,6 @@ class Canvas extends React.Component {
   }
 
   play () {
-
     this.state.movements.forEach((func) => {
       func();
     });
@@ -29,7 +28,7 @@ class Canvas extends React.Component {
   componentDidMount(){
 
     let camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 50000);
-    camera.position.set(0, 0 , 200);
+    camera.position.set(0.015331118153885154, -358.4075697326089, 74.64545664990149);
     camera.lookAt(new THREE.Vector3(0, 0, 0));
     this.camera = camera;
 

@@ -13,9 +13,9 @@ class SideBar extends React.Component {
 
     this.state = {
       name: "Earth",
-      radius: "5",
-      speed: "1",
-      orbitalRadius: "50",
+      radius: "30",
+      speed: "15",
+      orbitalRadius: "500",
       eccentricity: "0",
       orbitalCenter: [0,0,0],
       color: "#00ffff",
@@ -123,25 +123,25 @@ class SideBar extends React.Component {
             {errorMessage}
           <span>Planet Radius</span>
             <div>
-              <input type="range" min="1" max="100" value={this.state.radius} onChange={this.setRadius} />
+              <input className="form-input" type="range" min="1" max="200" value={this.state.radius} onChange={this.setRadius} />
               <span>{this.state.radius}</span>
             </div>
 
           <span>Velocity</span>
             <div>
-              <input type="range" min="0" max="100" value={this.state.speed} onChange={this.setSpeed} />
+              <input className="form-input" type="range" min="0" max="100" value={this.state.speed} onChange={this.setSpeed} />
               <span>{this.state.speed}</span>
             </div>
 
           <span>Orbital Radius</span>
             <div>
-              <input type="range" min="1" max="100" value={this.state.orbitalRadius} onChange={this.setOrbitalRadius} />
+              <input className="form-input orbital-radius" type="range" min="1" max="6000" value={this.state.orbitalRadius} onChange={this.setOrbitalRadius} />
               <span>{this.state.orbitalRadius}</span>
             </div>
 
             <span>Eccentricity %</span>
               <div>
-                <input type="range" min="0" max="100" value={this.state.eccentricity} onChange={this.setEccentricity} />
+                <input className="form-input" type="range" min="0" max="100" value={this.state.eccentricity} onChange={this.setEccentricity} />
                 <span>{this.state.eccentricity}</span>
               </div>
           <span className="orb-center-span">Orbital Center</span>
@@ -155,7 +155,7 @@ class SideBar extends React.Component {
                 <span>{this.state.color}</span>
                 <input type="color" value={this.state.color} onChange={this.setColor}/>
               </div>
-            <div className="button" onClick={this.handleSubmit}><div>+</div></div>
+            <div className="button addPlanet" onClick={this.handleSubmit}><div>Add Planet</div></div>
         </div>
           <div className="side-bar-item-container">
             {planets}

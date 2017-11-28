@@ -134,6 +134,14 @@ a{
   width: 40px;
 }
 
+.form-input {
+ width: 85%;
+}
+
+.orbital-radius {
+  width: 80%
+}
+
 .add-planet-form {
   margin: 15px;
 }
@@ -148,6 +156,13 @@ a{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.addPlanet {
+  margin: 0 auto;
+  margin-top: 15px;
+  width: 70%;
+  font-size: 15px;
 }
 .button:hover{
   cursor: pointer;

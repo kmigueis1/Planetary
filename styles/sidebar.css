@@ -11,6 +11,8 @@ body {
 }
 
 .top-bar {
+  height: 50px;
+  display: flex;
   margin: 0 auto;
   font-family: monospace;
   font-size: 30px;
@@ -21,13 +23,29 @@ body {
   left: 45vw;
 }
 
+.title {
+  height: 100%;
+  width: 170px;
+  position: relative;
+ }
+
+ .title-span {
+   position: absolute;
+   bottom: 0;
+ }
+
+img {
+  height: 100%;
+  width: 50px;
+}
+
 .footer {
   align-items: vertical;
   display: flex;
   justify-content: space-between;
   color: white;
   font-family: monospace;
-  font-size: 20px;
+  font-size: 15px;
   width: 60vw;
   z-index: 1000;
   position: fixed;

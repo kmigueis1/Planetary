@@ -1,3 +1,6 @@
+body {
+  margin: 0;
+}
 .app-container {
   height: 100vh;
 }
@@ -6,6 +9,59 @@
   height: 100vh;
   position: fixed;
 }
+
+.top-bar {
+  margin: 0 auto;
+  font-family: monospace;
+  font-size: 30px;
+  color: white;
+  z-index: 1000;
+  position: fixed;
+  top: 1vh;
+  left: 45vw;
+}
+
+.footer {
+  align-items: vertical;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  font-family: monospace;
+  font-size: 20px;
+  width: 60vw;
+  z-index: 1000;
+  position: fixed;
+  left: 305px;
+  bottom: 1vh;
+
+}
+
+.footer-text {
+  line-height: 30px;
+}
+
+.links {
+  display: flex;
+}
+
+.link {
+  margin-left: 20px;
+}
+
+
+i {
+  font-size: 30px;
+}
+
+.fa-paper-plane{
+  font-size: 25px;
+}
+
+a{
+  color: white;
+}
+
+
 
 .side-bar-container {
   display: flex;
@@ -20,6 +76,7 @@
   left: 50px;
   z-index: 1000px;
   border: 1px solid gray;
+
 }
 
 .orb-center-input {

@@ -157,7 +157,9 @@ class SideBar extends React.Component {
               </div>
             <div className="button" onClick={this.handleSubmit}><div>+</div></div>
         </div>
-        {planets}
+          <div className="side-bar-item-container">
+            {planets}
+          </div>
       </div>
     );
   }

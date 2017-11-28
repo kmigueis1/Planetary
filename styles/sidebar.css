@@ -1,9 +1,21 @@
+.app-container {
+  height: 100vh;
+}
+
+.canvas-wrapper{
+  height: 100vh;
+  position: fixed;
+}
+
 .side-bar-container {
+  display: flex;
+  flex-direction: column;
   font-family: courier;
   color: white;
-  width: 200px;
+  height: 85vh;
+  width: 250px;
   background: rgba(220,226,237,0.3);
-  position: absolute;
+  position: fixed;
   top: 50px;
   left: 50px;
   z-index: 1000px;
@@ -18,10 +30,20 @@
   display: none;
 }
 
+.side-bar-item-container{
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
 .side-bar-item {
   margin: 2px;
   border: 1px solid gray;
   background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
 }
 .planet-info {
 

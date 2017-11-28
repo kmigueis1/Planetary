@@ -28,7 +28,8 @@ class Canvas extends React.Component {
   componentDidMount(){
 
     let camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 50000);
-    camera.position.set(0.015331118153885154, -358.4075697326089, 74.64545664990149);
+    // camera.position.set(0.015331118153885154, -358.4075697326089, 74.64545664990149);
+    camera.position.set(0.009517270441932195, -222.49269331451126, 46.33849867099263);
     camera.lookAt(new THREE.Vector3(0, 0, 0));
     this.camera = camera;
 
@@ -59,7 +60,7 @@ class Canvas extends React.Component {
     controls.maxDistance = 20000;
     this.controls = controls;
     //
-    let sun = System.createPlanet(30);
+    let sun = System.createSun(30);
     scene.add(sun);
     //
     //if hosting on github, these hosted image paths will work. If hosting somewhere else, these image paths will have to be changed.
@@ -76,6 +77,12 @@ class Canvas extends React.Component {
     // let skyboxMaterial1 = new THREE.MeshFaceMaterial(skyboxMaterial);
     let skybox = new THREE.Mesh(skyboxGeometry, skyboxMaterial);
     this.scene.add(skybox);
+
+    let sunLight = new THREE.PointLight(0xffffff, 2, 10000, 2.5);
+    sunLight.position.set(0, 0, 0);
+    scene.add(sunLight);
+    let ambientLight = new THREE.AmbientLight(0x404040);
+    scene.add(ambientLight);
     this.play()
   }
 

@@ -145,13 +145,6 @@ class SideBar extends React.Component {
             </div>
           </div>
           <div className="planet">
-            <span>Orbital Radius</span>
-            <div>
-              <input className="form-input orbital-radius" type="range" min="1" max="6000" value={this.state.orbitalRadius} onChange={this.setOrbitalRadius} />
-              <span>{this.state.orbitalRadius}</span>
-            </div>
-          </div>
-          <div className="planet">
             <span>Eccentricity %</span>
             <div>
               <input className="form-input" type="range" min="0" max="100" value={this.state.eccentricity} onChange={this.setEccentricity} />

@@ -108,12 +108,13 @@ img {
 }
 
 
-i {
-  font-size: 30px;
+.fa {
+  font-size: 30px !important;
 }
 
+
 .fa-paper-plane{
-  font-size: 25px;
+  font-size: 25px !important;
 }
 
 a{

@@ -60,8 +60,11 @@ class Canvas extends React.Component {
     controls.maxDistance = 20000;
     this.controls = controls;
     //
-    let sun = System.createSun(30);
+    let core = System.createSun(5);
+    let sun = System.createSun(30, 0.9, 0xfdfd46);
+    sun.opacity = 0.5;
     scene.add(sun);
+    scene.add(core);
     //
     //if hosting on github, these hosted image paths will work. If hosting somewhere else, these image paths will have to be changed.
     let skyboxGeometry = new THREE.CubeGeometry(40000,40000,40000);

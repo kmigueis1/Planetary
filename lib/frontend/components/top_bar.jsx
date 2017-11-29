@@ -20,7 +20,7 @@ render(){
         <div>
           <div className="p1">Welcome to Planetary! Planetary is a simulation of our own solar system. Planet sizes are to scale with each other
           (excluding the Sun) and orbital sizes and shape are to scale with each other. The relation between orbits and planet sizes are
-          to scale (you wouldnt see any planets if they were!). </div>
+          not to scale (you wouldnt see any planets if they were!). </div>
           <div className="p2">You can use sliders on the sidebar to select
           properties for a new planet and its orbit and click on the "Add Planet" button to add a new planet when ready. The newly added
           planet will be added to the scrollable list of existing planets on the sidebar. To remove a planet, click on the minus

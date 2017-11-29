@@ -25,7 +25,7 @@ render(){
     <div>
     <div className="top-bar">
       <div className="title"><span className="title-span">Planetary</span></div>
-      <img src="../../../images/Planetary_Icon.png"></img>
+      <img src="https://raw.githubusercontent.com/kmigueis1/Planetary/master/images/Planetary_Icon.png"></img>
     </div>
     <div className="help-button" onClick={this.toggleModal}>Help</div>
       {helpModal}

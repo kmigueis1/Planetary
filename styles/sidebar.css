@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+
 body {
   margin: 0;
 }
@@ -13,14 +15,14 @@ body {
 .top-bar {
   height: 50px;
   display: flex;
-  margin: 0 auto;
-  font-family: monospace;
+  margin-top: 5px;
+  font-family: 'Montserrat', sans-serif;
   font-size: 30px;
   color: white;
   z-index: 1000;
   position: fixed;
-  top: 1vh;
-  left: 45vw;
+  top: 0;
+  left: 5vw;
 }
 
 .title {
@@ -37,15 +39,17 @@ body {
 img {
   height: 100%;
   width: 50px;
+  margin-top: 5px;
+  margin-left: -21px;
 }
 
 .help-button {
   color: white;
-  font-family: monospace;
+  font-family: 'Montserrat', sans-serif;
   font-size: 20px;
   position: fixed;
-  top: 1vh;
-  right: 10vw;
+  top: 2vh;
+  right: 2vw;
 }
 
 .help-button:hover {
@@ -62,35 +66,37 @@ img {
 
 .help-modal {
   color: white;
-  font-family: monospace;
+  font-family: 'Montserrat', sans-serif;
   font-size: 15px;
-  height: 300px;
-  width: 300px;
-  background: rgba(0,0,0,0.5);
+  min-height: 100px;
+  width: 30%;
+  background: rgba(0,0,0,0.75);
   border: 1px solid gray;
-  border-radius: 10px;
-  position: fixed;
-  top: 30vh;
-  left: 40vw;
+  border-radius: 2px;
+  margin: 10% auto;
+  padding: 20px;
 }
 
 .footer {
   align-items: vertical;
   display: flex;
-  justify-content: space-between;
   color: white;
-  font-family: monospace;
+  font-family: 'Montserrat', sans-serif;
   font-size: 15px;
   width: 60vw;
   z-index: 1000;
   position: fixed;
-  left: 305px;
   bottom: 1vh;
-
+  right: 6vh;
+  justify-content: flex-end;
 }
 
 .footer-text {
   line-height: 30px;
+}
+
+.footer-text.contact {
+    margin-left: 20px;
 }
 
 .links {
@@ -119,13 +125,13 @@ a{
 .side-bar-container {
   display: flex;
   flex-direction: column;
-  font-family: courier;
+  font-family: 'Montserrat', sans-serif;
   color: white;
   height: 85vh;
-  width: 250px;
-  background: rgba(220,226,237,0.3);
+  width: 255px;
+  background: rgba(255,255,255,0.3);
   position: fixed;
-  top: 50px;
+  top: 70px;
   left: 50px;
   z-index: 1000px;
   border: 1px solid gray;
@@ -138,6 +144,23 @@ a{
 
 .orb-center-span {
   display: none;
+}
+
+.planet {
+    margin: 10px 0;
+}
+
+.planet .planet-color {
+  display: flex;
+  align-items: center;
+}
+
+.planet .planet-color span {
+  margin-right: 10px;
+}
+
+.planet .planet-color input[type="color" i] {
+  border-radius: 2px;
 }
 
 .side-bar-item-container{
@@ -162,7 +185,7 @@ a{
 .error-message{
   color: red;
   font-family: sans-serif;
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .orb-center-input {
@@ -179,6 +202,20 @@ a{
 
 .add-planet-form {
   margin: 15px;
+  font-size: 12.5px;
+}
+
+.add-planet-form .planet-name {
+  display: flex;
+  align-items: center;
+}
+
+.add-planet-form .planet-name input{
+  margin-left: 10px;
+  font-weight: bold;
+  border: none;
+  height: 20px;
+  border-radius: 2px;
 }
 
 .button {
@@ -194,10 +231,9 @@ a{
 }
 
 .addPlanet {
-  margin: 0 auto;
-  margin-top: 15px;
-  width: 70%;
-  font-size: 15px;
+  margin: 20px 0 0;
+  width: 50%;
+  font-size: 14px;
 }
 .button:hover{
   cursor: pointer;

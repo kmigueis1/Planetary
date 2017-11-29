@@ -116,46 +116,65 @@ class SideBar extends React.Component {
       <div className="side-bar-container">
 
         <div className="add-planet-form">
-          <span>Planet Name</span>
-            <div>
-              <input type="text" value={this.state.name} onChange={this.setName} />
+          <div className="planet">
+            <div className="planet-name">
+              <span>Planet Name</span>
+              <span><input type="text" value={this.state.name} onChange={this.setName} /></span>
             </div>
             {errorMessage}
-          <span>Planet Radius</span>
+          </div>
+          <div className="planet">
+            <span>Planet Radius</span>
             <div>
               <input className="form-input" type="range" min="1" max="200" value={this.state.radius} onChange={this.setRadius} />
               <span>{this.state.radius}</span>
             </div>
-
-          <span>Velocity</span>
+          </div>
+          <div className="planet">
+            <span>Velocity</span>
             <div>
               <input className="form-input" type="range" min="0" max="100" value={this.state.speed} onChange={this.setSpeed} />
               <span>{this.state.speed}</span>
             </div>
-
-          <span>Orbital Radius</span>
+          </div>
+          <div className="planet">
+            <span>Orbital Radius</span>
             <div>
               <input className="form-input orbital-radius" type="range" min="1" max="6000" value={this.state.orbitalRadius} onChange={this.setOrbitalRadius} />
               <span>{this.state.orbitalRadius}</span>
             </div>
-
-            <span>Eccentricity %</span>
-              <div>
-                <input className="form-input" type="range" min="0" max="100" value={this.state.eccentricity} onChange={this.setEccentricity} />
-                <span>{this.state.eccentricity}</span>
-              </div>
-          <span className="orb-center-span">Orbital Center</span>
+          </div>
+          <div className="planet">
+            <span>Orbital Radius</span>
             <div>
-              <input className="orb-center-input" type="number" value={this.state.orbitalCenter[0]} onChange={this.setOrbitalCenterX} />
-              <input className="orb-center-input" type="number" value={this.state.orbitalCenter[1]} onChange={this.setOrbitalCenterY} />
-              <input className="orb-center-input" type="number" value={this.state.orbitalCenter[2]} onChange={this.setOrbitalCenterZ} />
+              <input className="form-input orbital-radius" type="range" min="1" max="6000" value={this.state.orbitalRadius} onChange={this.setOrbitalRadius} />
+              <span>{this.state.orbitalRadius}</span>
             </div>
-            <span>Color</span>
-              <div>
-                <span>{this.state.color}</span>
-                <input type="color" value={this.state.color} onChange={this.setColor}/>
-              </div>
-            <div className="button addPlanet" onClick={this.handleSubmit}><div>Add Planet</div></div>
+          </div>
+          <div className="planet">
+            <span>Eccentricity %</span>
+            <div>
+              <input className="form-input" type="range" min="0" max="100" value={this.state.eccentricity} onChange={this.setEccentricity} />
+              <span>{this.state.eccentricity}</span>
+            </div>
+          </div>
+
+          <div className="planet">
+            <div className="planet-color">
+              <span>Color</span>
+              <span>{this.state.color}</span>
+              <input type="color" value={this.state.color} onChange={this.setColor}/>
+            </div>
+          </div>
+
+          <span className="orb-center-span">Orbital Center</span>
+          <div>
+            <input className="orb-center-input" type="number" value={this.state.orbitalCenter[0]} onChange={this.setOrbitalCenterX} />
+            <input className="orb-center-input" type="number" value={this.state.orbitalCenter[1]} onChange={this.setOrbitalCenterY} />
+            <input className="orb-center-input" type="number" value={this.state.orbitalCenter[2]} onChange={this.setOrbitalCenterZ} />
+          </div>
+
+          <div className="button addPlanet" onClick={this.handleSubmit}><div>Add Planet</div></div>
         </div>
           <div className="side-bar-item-container">
             {planets}

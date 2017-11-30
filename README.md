@@ -9,7 +9,7 @@ Planetary is a visualization that models the movement of a customized planetary 
 
 ### Main Planetary View
 
-The main view renders the currently created planets. By default, Earth's solar system is preloaded. Planetary orbit will be shown by a line.
+The main view renders the currently created planets. By default, Earth's solar system is preloaded. Planetary orbit will be shown by an ellipse.
 
 ### Side Bar
 

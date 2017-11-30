@@ -118,6 +118,14 @@ class SideBar extends React.Component {
         <p>Please choose a unique name</p>
       </div>
     ) : (<div></div>)
+    let timeLapseValue = (this.props.timeLapse.factor * 0.192).toFixed(1)
+    let timeLapseDisplay = timeLapseValue < 12.00 ?
+    (
+      <span>{`${timeLapseValue} months/sec`}</span>
+      ):
+    (
+      <span>{`${(this.props.timeLapse.factor * 0.192/12.0).toFixed(1)} years/sec`}</span>
+      );
 
     return (
       <div className="side-bar-container">
@@ -163,7 +171,6 @@ class SideBar extends React.Component {
           <div className="planet">
             <div className="planet-color">
               <span>Color</span>
-              <span>{this.state.color}</span>
               <input type="color" value={this.state.color} onChange={this.setColor}/>
             </div>
           </div>
@@ -176,15 +183,15 @@ class SideBar extends React.Component {
           </div>
 
           <div className="button addPlanet" onClick={this.handleSubmit}><div>Add Planet</div></div>
+            <div className="planet time-lapse">
+              <span>Time Lapse</span>
+              <div>
+                <input className="form-input" type="range" min="0" max="300" value={(this.props.timeLapse.factor).toString()} onChange={this.setTimeLapse} />
+              </div>
+              {timeLapseDisplay}
+            </div>
         </div>
 
-        <div className="planet time-lapse">
-          <span>Time Lapse</span>
-          <div>
-            <input className="form-input" type="range" min="1" max="100" value={(this.props.timeLapse.factor).toString()} onChange={this.setTimeLapse} />
-            <span>{this.props.timeLapse.factor}</span>
-          </div>
-        </div>
           <div className="side-bar-item-container">
             {planets}
           </div>

@@ -78,7 +78,7 @@ img {
   line-height: 150%;
 }
 
-.p1 {
+.p {
   margin-bottom: 15px;
 }
 
@@ -169,6 +169,12 @@ a{
   border-radius: 2px;
 }
 
+
+
+.time-lapse {
+  margin-top: 20px;
+}
+
 .side-bar-item-container{
   height: 100%;
   overflow-y: scroll;
@@ -254,8 +260,4 @@ a{
 .canvas-wrapper {
   height: 1000px;
   width: 1000px;
-}
-
-.time-lapse {
-  display: none;
 }

@@ -18,7 +18,7 @@ class Canvas extends React.Component {
 
   play () {
     this.state.movements.forEach((func) => {
-      func();
+      func(this.props.timeLapse);
     });
     this.renderer.render(this.scene, this.camera );
     this.controls.update();
@@ -99,7 +99,7 @@ class Canvas extends React.Component {
         let planetBody = System.createPlanet(planet.radius, planet.color);
         planetBody.name = planetName;
         console.log("planet does not exist yet");
-        let planetMove = System.enablePlanet(planetBody, planet.speed, planet.orbitalRadius, planet.orbitalCenter, planet.eccentricity, scene);
+        let planetMove = System.enablePlanet(planetBody, planet.speed, planet.orbitalRadius, planet.orbitalCenter, planet.eccentricity, scene, this.props.timeLapse);
         this.state.movements.push(planetMove);
       } else {
         //implement planet editing?

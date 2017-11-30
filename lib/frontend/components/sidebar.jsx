@@ -19,7 +19,7 @@ class SideBar extends React.Component {
       eccentricity: "0",
       orbitalCenter: [0,0,0],
       color: "#00ffff",
-      error: false
+      error: false,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.setRadius = this.setRadius.bind(this);
@@ -31,6 +31,7 @@ class SideBar extends React.Component {
     this.setOrbitalCenterY = this.setOrbitalCenterY.bind(this);
     this.setOrbitalCenterZ = this.setOrbitalCenterZ.bind(this);
     this.setColor = this.setColor.bind(this);
+    this.setTimeLapse = this.setTimeLapse.bind(this);
   }
 
   componentDidMount(){
@@ -96,8 +97,14 @@ class SideBar extends React.Component {
   }
 
   setColor(e) {
-    console.log(e.target.value);
     this.setState({color: e.target.value})
+  }
+
+  setTimeLapse(e) {
+    // this.setState({timeLapse: e.target.value})
+    // console.log("props:", this.props)
+
+    this.props.newTimeLapse(parseInt(e.target.value));
   }
 
   render(){
@@ -152,6 +159,7 @@ class SideBar extends React.Component {
             </div>
           </div>
 
+
           <div className="planet">
             <div className="planet-color">
               <span>Color</span>
@@ -168,6 +176,14 @@ class SideBar extends React.Component {
           </div>
 
           <div className="button addPlanet" onClick={this.handleSubmit}><div>Add Planet</div></div>
+        </div>
+
+        <div className="planet time-lapse">
+          <span>Time Lapse</span>
+          <div>
+            <input className="form-input" type="range" min="1" max="100" value={(this.props.timeLapse.factor).toString()} onChange={this.setTimeLapse} />
+            <span>{this.props.timeLapse.factor}</span>
+          </div>
         </div>
           <div className="side-bar-item-container">
             {planets}

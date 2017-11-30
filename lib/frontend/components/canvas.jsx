@@ -60,11 +60,10 @@ class Canvas extends React.Component {
     controls.maxDistance = 20000;
     this.controls = controls;
     //
-    let core = System.createSun(5);
-    let sun = System.createSun(30, 0.9, 0xfdfd46);
-    sun.opacity = 0.5;
+    // let core = System.createSun(5);
+    let sun = System.createSun(30, 1, 0xfdfd46);
     scene.add(sun);
-    scene.add(core);
+    // scene.add(core);
     //
     //if hosting on github, these hosted image paths will work. If hosting somewhere else, these image paths will have to be changed.
     let skyboxGeometry = new THREE.CubeGeometry(40000,40000,40000);
@@ -91,17 +90,16 @@ class Canvas extends React.Component {
 
   componentDidUpdate () {
     let scene = this.scene;
-
+    console.log("timelapse numerb is ", this.props.timeLapse)
     Object.keys(this.props.planets).forEach((planetName) => {
       let planet = this.props.planets[planetName];
       let existingPlanet = scene.getObjectByName(planetName);
-      console.log("existing planet is ", existingPlanet);
       if (!existingPlanet){
         //creating new planet
         let planetBody = System.createPlanet(planet.radius, planet.color);
         planetBody.name = planetName;
         console.log("planet does not exist yet");
-        let planetMove = System.enablePlanet(planetBody, planet.speed, planet.orbitalRadius, planet.orbitalCenter, planet.eccentricity, scene );
+        let planetMove = System.enablePlanet(planetBody, planet.speed, planet.orbitalRadius, planet.orbitalCenter, planet.eccentricity, scene);
         this.state.movements.push(planetMove);
       } else {
         //implement planet editing?

@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(//fonts.googleapis.com/css?family=Montserrat:400,700);
 
 body {
   margin: 0;
@@ -254,4 +254,8 @@ a{
 .canvas-wrapper {
   height: 1000px;
   width: 1000px;
+}
+
+.time-lapse {
+  display: none;
 }

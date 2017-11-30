@@ -10,9 +10,8 @@ const SideBarItem = (props) => {
           <span  style={{color: `${props.planet.color}`}}>{props.planet.name}</span>
         </div>
         <div className="velocity">
-          <span >Velocity: {props.planet.speed}px/sec</span>
+          <span >Velocity: {props.planet.speed * 2 * 3600}km/hr</span>
         </div>
-
       </div>
       <div className="button minus" onClick={(e) => (props.deletePlanet(props.planet.name))}><div>-</div></div>
 

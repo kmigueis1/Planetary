@@ -27,7 +27,7 @@ class Canvas extends React.Component {
 
   componentDidMount(){
 
-    let camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 50000);
+    let camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 240000);
     // camera.position.set(0.015331118153885154, -358.4075697326089, 74.64545664990149);
     camera.position.set(0.009517270441932195, -222.49269331451126, 46.33849867099263);
     camera.lookAt(new THREE.Vector3(0, 0, 0));
@@ -66,7 +66,7 @@ class Canvas extends React.Component {
     // scene.add(core);
     //
     //if hosting on github, these hosted image paths will work. If hosting somewhere else, these image paths will have to be changed.
-    let skyboxGeometry = new THREE.CubeGeometry(40000,40000,40000);
+    let skyboxGeometry = new THREE.CubeGeometry(200000,200000,200000);
     let skyboxMaterial = [
       new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load("https://raw.githubusercontent.com/kmigueis1/Planetary/master/images/space2/img1_up.jpg"), side: THREE.DoubleSide}),
       new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load("https://raw.githubusercontent.com/kmigueis1/Planetary/master/images/space2/img2_front.jpg"), side: THREE.DoubleSide}),

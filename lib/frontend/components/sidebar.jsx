@@ -153,7 +153,7 @@ class SideBar extends React.Component {
             <span>{`${this.state.speed * 2 * 3600} km/hr`}</span>
           </div>
           <div className="planet">
-            <span>Orbital Radius</span>
+            <span>Orbital Radius (semi-minor axis)</span>
             <div>
               <input className="form-input orbital-radius" type="range" min="1" max="6000" value={this.state.orbitalRadius} onChange={this.setOrbitalRadius} />
             </div>
@@ -162,7 +162,7 @@ class SideBar extends React.Component {
           <div className="planet">
             <span>Eccentricity %</span>
             <div>
-              <input className="form-input" type="range" min="0" max="100" value={this.state.eccentricity} onChange={this.setEccentricity} />
+              <input className="form-input" type="range" min="0" max="99" value={this.state.eccentricity} onChange={this.setEccentricity} />
               <span>{this.state.eccentricity}</span>
             </div>
           </div>
